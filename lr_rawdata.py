@@ -27,6 +27,7 @@ train, test = train_test_split(df, test_size = 0.2, shuffle=False)      #       
 scaler = StandardScaler()
 
 train_sc = scaler.fit_transform(train[['horsepower','price']])
+print(train_sc)
 
 test_sc = scaler.transform(test[['horsepower','price']])
 
@@ -36,7 +37,7 @@ regressor = LinearRegression()
 regressor.fit(np.asarray(train_sc[:,0].reshape(-1,1)), np.asarray(train_sc[:,1]))
 predictions = regressor.predict(test_sc[:,0].reshape(-1,1))
 
-print(predictions)
+
 
 # ================================  Plotting    ================================
 

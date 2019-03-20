@@ -42,7 +42,10 @@ predictions = regressor.predict(test_sc[:,0].reshape(-1,1))
 # ================================  Plotting    ================================
 
 #plt.plot(test_sc[:,1],predictions,'ro')
-plt.plot(test_sc[:,0], predictions, 'ro')
-plt.plot(test_sc[:,0], test_sc[:,1],'bo')
+plt.plot(test_sc[:,0], predictions, 'ro', label='predictions')
+plt.plot(test_sc[:,0], test_sc[:,1],'bo', label='real')
+plt.ylabel('price')
+plt.xlabel('horsepower')
 
+plt.legend()
 plt.show()
